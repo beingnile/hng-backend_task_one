@@ -2,16 +2,16 @@
 
 A simple barebone `Express js` host with a single GET endpoint that returns this JSON response  
 
-* **URL**
+* **URL**  
     /
 
-* **Method:**
+* **Method:**  
     `GET`
 
-* **URL Params**
+* **URL Params**  
     None
 
-* **Data Params**
+* **Data Params**  
     None
 
 * **Success Response:**

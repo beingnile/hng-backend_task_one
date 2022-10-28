@@ -7,10 +7,10 @@ const app: Express = express();
 const port = process.env.PORT;
 
 interface message {
-    "slackUsername": string,
-    "backend": boolean,
-    "age": number,
-    "bio": string
+  "slackUsername": string,
+  "backend": boolean,
+  "age": number,
+  "bio": string
 };
 
 const myMessage: message = {

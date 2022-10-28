@@ -1,0 +1,40 @@
+{
+  "name": "hng-backend_task_one",
+  "version": "1.0.0",
+  "description": "A simple `Express js` host with a single GET endpoint that returns this JSON response",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "postinstall": "tsc",
+    "watch-node": "nodemon dist/index.js",
+    "deploy": "git add . && git commit -m \"Build server\" && git push heroku main",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
+  },
+  "engines": {
+    "node": "16.18.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beingnile/hng-backend_task_one.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beingnile/hng-backend_task_one/issues"
+  },
+  "homepage": "https://github.com/beingnile/hng-backend_task_one#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "eslint": "^8.26.0",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "@types/node": "^18.11.7",
+    "concurrently": "^7.5.0",
+    "nodemon": "^2.0.20",
+    "typescript": "^4.8.4"
+  }
+}

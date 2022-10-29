@@ -1,5 +1,5 @@
-import express, { Express, Request, Response } from 'express';
-import dotenv from 'dotenv';
+import express, { Express, Request, Response } from "express";
+import dotenv from "dotenv";
 
 dotenv.config();
 
@@ -7,20 +7,20 @@ const app: Express = express();
 const port = process.env.PORT;
 
 interface message {
-  "slackUsername": string,
-  "backend": boolean,
-  "age": number,
-  "bio": string
-};
+  slackUsername: string;
+  backend: boolean;
+  age: number;
+  bio: string;
+}
 
 const myMessage: message = {
   slackUsername: "beingnile",
   backend: true,
   age: 21,
-  bio: "Hi, Nice to meet you!!!, my name is Nile and I build cool stuff for software backend. On the side, I make music and enjoy chess"
+  bio: "Hi, Nice to meet you!!!, my name is Nile and I build cool stuff for software backend. On the side, I make music and enjoy chess",
 };
 
-app.get('/', (req: Request, res: Response) => {
+app.get("/", (_req: Request, res: Response) => {
   res.json(myMessage);
 });
 

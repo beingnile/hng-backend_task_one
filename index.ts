@@ -13,6 +13,18 @@ interface message {
   bio: string;
 }
 
+const operation = {
+  add: "addition",
+  minus: "subtraction",
+  mult: "multiplication",
+};
+
+interface ret {
+  slackUsername: string;
+  operation_type: string;
+  result: number;
+}
+
 const myMessage: message = {
   slackUsername: "beingnile",
   backend: true,
@@ -22,6 +34,31 @@ const myMessage: message = {
 
 app.get("/", (_req: Request, res: Response) => {
   res.json(myMessage);
+});
+
+app.post("/do-math", (req: Request, res: Response) => {
+  let op: string = "";
+  if (req.body.operation_type !== undefined) {
+    op = req.body.operation_type;
+  }
+  const x: number = req.body.x;
+  const y: number = req.body.y;
+  let result = 0;
+  if (op === operation.add) {
+    result = x + y;
+  } else if (op === operation.minus) {
+    result = x - y;
+  } else if (op === operation.mult) {
+    result = x * y;
+  }
+
+  const myReturn: ret = {
+    slackUsername: "beingnile",
+    operation_type: op,
+    result: result,
+  };
+
+  res.json(myReturn);
 });
 
 app.listen(port, () => {
